@@ -1,0 +1,206 @@
+<core:View  xmlns:mvc="sap.ui.core.mvc"  xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" controllerName="listreport4.ext.controller.ObjectPageExt">
+    
+     <IconTabBar
+		id="idIconTabBarMulti1"
+		
+		class="sapUiResponsiveContentPadding" select="onSelect">
+		<items>
+			<IconTabFilter
+				icon="sap-icon://hint"
+                text="4 POS" key="firstTab">
+				
+                	<!-- <smartTable:SmartTable id="LineItemsSmartTable1" entitySet="SUPPLIERSet"  tableType="ResponsiveTable" useExportToExcel="true"
+                     beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="Order Details" showRowCount="true"
+                      persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+				
+				<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable> -->
+
+            	
+                <smartTable:SmartTable id="LineItemsSmartTable" entitySet="SUPPLIERSet"  tableType="ResponsiveTable" useExportToExcel="true"
+                     beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="Order Details" showRowCount="true"
+                      persistencyKey="SmartTableAnalytical_Explored" editable="false" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+				<!--  Table integration -->
+              <Table mode="None" growingThreshold="100" id="table0001" growing="true" items="{/SUPPLIERSet}"
+                      growingScrollToLoad="true">
+                   <columns>
+                     <!-- <Column>
+					<Label text="Supplierid"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Suppliername"></Label>
+				</Column>
+				<Column>
+					<Label text="Productid"></Label>
+				</Column>
+				<Column>
+					<Label text="Quantity"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Description"></Label>
+				</Column> -->
+                 </columns>
+                <items>
+                       <ColumnListItem>
+					<cells>
+						<!-- <Input value="{Supplierid}" editable="false"/>
+						<Input value="{Suppliername}"/>
+						<Input value="{Productid}"/>
+						<Input value="{Quantity}"/>
+						<Input value="{Description}"/> -->
+                        	
+						
+					</cells>
+				</ColumnListItem>
+                 </items>
+               </Table>
+            <!--  EndTable integration -->
+				<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+                <!-- <smartTable:customToolbar>
+			<OverflowToolbar design="Transparent">
+				<ToolbarSpacer/>
+				
+				<OverflowToolbarButton icon="sap-icon://edit" text="Edit" press="onEdit3"/>
+				<OverflowToolbarButton icon="sap-icon://delete" text="Delete" press="onDelete"/>
+				<OverflowToolbarButton icon="sap-icon://add" text="add" press="onAdd"/>
+				
+			</OverflowToolbar>
+		</smartTable:customToolbar> -->
+		
+       
+			</smartTable:SmartTable>
+			</IconTabFilter>
+			<IconTabFilter
+				text="Filtered table"
+                icon="sap-icon://table-view"
+                key="seconTab"
+				
+                > <Table mode="MultiSelect" growingThreshold="100" growing="true" 
+     growingScrollToLoad="true" items="{/SUPPLIERSet}" id="secondTable" >
+     	<headerToolbar>
+					<OverflowToolbar >
+						<Title text="Products" level="H2" />
+						<ToolbarSpacer />
+						<Button   type="Transparent"
+							press="onEdit" icon="sap-icon://edit" />
+                        <Button icon="sap-icon://delete"  press="onDelete"/>   
+                        <!-- <Button icon="sap-icon://add" press="onAdd"/>  -->
+						<Button  icon="sap-icon://add"  press="onOpenDialog"/>
+						
+					</OverflowToolbar>
+				</headerToolbar>
+        <columns>
+         <Column>
+					<Label text="Supplierid"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Suppliername"></Label>
+				</Column>
+				<Column>
+					<Label text="Productid"></Label>
+				</Column>
+				<Column>
+					<Label text="Quantity"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Description"></Label>
+				</Column>
+        </columns>
+        <items>
+        <ColumnListItem>
+					<cells>
+						<Input value="{Supplierid}" editable="false"/>
+						<Input value="{Suppliername}"/>
+						<Input value="{Productid}"/>
+						<Input value="{Quantity}"/>
+						<Input value="{Description}"/>
+                        	
+						
+					</cells>
+				</ColumnListItem>
+        </items>
+     </Table> 
+				
+                <!-- <smartTable:SmartTable id="LineItemsSmartTable91" entitySet="SUPPLIERSet"  tableType="Table" useExportToExcel="true"
+                     beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="Order Details" showRowCount="true"
+                      persistencyKey="SmartTableAnalytical_Explored" editable="true" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+				
+				<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+                <smartTable:customToolbar>
+			<OverflowToolbar design="Transparent">
+				<ToolbarSpacer/>
+				
+				<OverflowToolbarButton icon="sap-icon://edit" text="Edit" press="onEdit3"/>
+				<OverflowToolbarButton icon="sap-icon://delete" text="Delete" press="onDelete"/>
+				<OverflowToolbarButton icon="sap-icon://add" text="add" press="onAdd"/>
+				
+			</OverflowToolbar>
+		</smartTable:customToolbar>
+		
+       
+			</smartTable:SmartTable> -->
+			</IconTabFilter>
+            <IconTabFilter text="Filterd data Based On Vendors" 
+                icon="sap-icon://table-view" id="filter1" key="thirdTab" >
+                  <Table mode="MultiSelect" growingThreshold="100" growing="true" 
+     growingScrollToLoad="true" items="{/SUPPLIERSet}" id="thirdTable" >
+     	<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<Title text="Products" level="H2" />
+						<ToolbarSpacer />
+						<Button id="editButton"  type="Transparent"
+							press="onEdit2" icon="sap-icon://edit" />
+                        <Button icon="sap-icon://delete"  press="onDelete2"/>   
+                        <Button icon="sap-icon://add" press="onOpenDialog2"/> 
+						
+					</OverflowToolbar>
+				</headerToolbar>
+        <columns>
+         <Column>
+					<Label text="Supplierid"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Suppliername"></Label>
+				</Column>
+				<Column>
+					<Label text="Productid"></Label>
+				</Column>
+				<Column>
+					<Label text="Quantity"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Description"></Label>
+				</Column>
+        </columns>
+        <items>
+        <ColumnListItem>
+					<cells>
+						<Input value="{Supplierid}" editable="false"/>
+						<Input value="{Suppliername}"/>
+						<Input value="{Productid}"/>
+						<Input value="{Quantity}"/>
+						<Input value="{Description}"/>
+                        	
+						
+					</cells>
+				</ColumnListItem>
+        </items>
+     </Table> 
+            </IconTabFilter>
+			
+			
+		</items>
+	</IconTabBar>
+</core:View>

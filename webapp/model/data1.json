@@ -1,0 +1,73 @@
+{
+    "dataSet" :[
+        {
+            "Supplierid":"SP06",
+            "Suppliername":"Elon",
+            "Productid":"LP101",
+            "Quantity":"10" ,
+            "Description" :"HP LAPTOPS VENDORS"     
+     },
+     {
+        "Supplierid":"SP07",
+        "Suppliername":" Jeff",
+        "Productid":"LP101",
+        "Quantity":"2" ,
+        "Description" :"HP LAPTOPS VENDORS"     
+ },
+ {
+    "Supplierid":"SP08",
+    "Suppliername":" B Gates",
+    "Productid":"LP101",
+    "Quantity":"1" ,
+    "Description" :"HP LAPTOPS VENDORS"     
+},
+{
+            "Supplierid":"SP09",
+            "Suppliername":"Zhong",
+            "Productid":"LP101",
+            "Quantity":"3",
+            "Description":"HP LAPTOPS VENDORS"
+},
+        {
+            "Supplierid":"SP010",
+            "Suppliername":"Larry",
+            "Productid":"LP101",
+            "Quantity":"9" ,
+            "Description" :"HP LAPTOPS VENDORS"     
+     }
+    ],
+    "dataSet2":[
+        {
+            "Supplierid":"SP011",
+            "Suppliername":"Larry",
+            "Productid":"LP102",
+            "Quantity":"9" ,
+            "Description" :"APPLE MAC BOOK VENDOR"     
+     }, {
+        "Supplierid":"SP012",
+        "Suppliername":"Zhong",
+        "Productid":"LP102",
+        "Quantity":"1" ,
+        "Description" :"APPLE MAC BOOK VENDOR"     
+    }, {
+        "Supplierid":"SP013",
+        "Suppliername":"Shanshan",
+        "Productid":"LP102",
+        "Quantity":"1" ,
+        "Description" :"APPLE MAC BOOK VENDOR"     
+    }, {
+        "Supplierid":"SP014",
+        "Suppliername":"Jeff",
+        "Productid":"LP102",
+        "Quantity":"7" ,
+        "Description" :"APPLE MAC BOOK VENDOR"     
+    }, {
+        "Supplierid":"SP015",
+        "Suppliername":"Elon",
+        "Productid":"LP102",
+        "Quantity":"9" ,
+        "Description" :"APPLE MAC BOOK VENDOR"     
+    }
+    
+    ]
+}

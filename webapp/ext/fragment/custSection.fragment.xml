@@ -1,0 +1,139 @@
+<!-- <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Text text="REPLACE_WITH_SECTION_CONTENT"/>
+</core:FragmentDefinition> -->
+
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable">
+    <!-- <Text text="REPLACE_WITH_SECTION_CONTENT"/> -->
+    <IconTabBar
+		id="idIconTabBarMulti"
+		
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				icon="sap-icon://hint"
+                text="4 POS">
+				
+                	<smartTable:SmartTable id="LineItemsSmartTable" entitySet="SUPPLIERSet"  tableType="ResponsiveTable" useExportToExcel="true"
+                     beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="Order Details" showRowCount="true"
+                      persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+				
+				<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+			</IconTabFilter>
+			<IconTabFilter
+				text="table"
+                icon="sap-icon://table-view"
+                >
+				
+                <smartTable:SmartTable id="LineItemsSmartTable9" entitySet="SUPPLIERSet"  tableType="Table" useExportToExcel="true"
+                     beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="Order Details" showRowCount="true"
+                      persistencyKey="SmartTableAnalytical_Explored" editable="true" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+				
+				<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+                <smartTable:customToolbar>
+			<OverflowToolbar design="Transparent">
+				<ToolbarSpacer/>
+				
+				<OverflowToolbarButton icon="sap-icon://edit" text="Edit" press="onEdit"/>
+				<OverflowToolbarButton icon="sap-icon://delete" text="Delete" press="onDelete"/>
+				<OverflowToolbarButton icon="sap-icon://add" text="add" press="onAdd"/>
+				
+			</OverflowToolbar>
+		</smartTable:customToolbar>
+		 <!-- <Table mode="MultiSelect" growingThreshold="100" growing="true" 
+     growingScrollToLoad="true" >
+        <columns>
+         <Column>
+					<Label text="Supplierid"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Suppliername"></Label>
+				</Column>
+				<Column>
+					<Label text="Productid"></Label>
+				</Column>
+				<Column>
+					<Label text="Quantity"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Description"></Label>
+				</Column>
+        </columns>
+        <items>
+        <ColumnListItem>
+					<cells>
+						<Text text="{Supplierid}"></Text>
+						<Text text="{Suppliername}"></Text>
+						<Text text="{Productid}"></Text>
+						<Text text="{Quantity}"></Text>
+						<Text text="{Description}"></Text>
+                        	
+						
+					</cells>
+				</ColumnListItem>
+        </items>
+     </Table> -->
+
+       
+			</smartTable:SmartTable>
+			</IconTabFilter>
+            <IconTabFilter text="Filterd data"
+                icon="sap-icon://table-view">
+                  <Table mode="MultiSelect" growingThreshold="100" growing="true" 
+     growingScrollToLoad="true" items="{/SUPPLIERSet}" >
+     	<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<Title text="Products" level="H2" />
+						<ToolbarSpacer />
+						<Button id="editButton"  type="Transparent"
+							press="onEdit2" icon="sap-icon://edit" />
+                        <Button icon="sap-icon://delete"  press="onDelete2"/>   
+                        <Button icon="sap-icon://add" press="onAdd2"/> 
+						
+					</OverflowToolbar>
+				</headerToolbar>
+        <columns>
+         <Column>
+					<Label text="Supplierid"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Suppliername"></Label>
+				</Column>
+				<Column>
+					<Label text="Productid"></Label>
+				</Column>
+				<Column>
+					<Label text="Quantity"></Label>
+				</Column>
+				
+				<Column>
+					<Label text="Description"></Label>
+				</Column>
+        </columns>
+        <items>
+        <ColumnListItem>
+					<cells>
+						<Text text="{Supplierid}"></Text>
+						<Text text="{Suppliername}"></Text>
+						<Text text="{Productid}"></Text>
+						<Text text="{Quantity}"></Text>
+						<Text text="{Description}"></Text>
+                        	
+						
+					</cells>
+				</ColumnListItem>
+        </items>
+     </Table> 
+            </IconTabFilter>
+			
+			
+		</items>
+	</IconTabBar>
+</core:FragmentDefinition>
